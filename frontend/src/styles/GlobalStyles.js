@@ -3,10 +3,11 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
   :root {
     --red: #FF4949;
-    --deepPurple: #59095c;
+    --softPurple: #D209e0;
+    --deepPurple: #840888;
     --gray: #aaaaaa;
     --softBlack: #4b4b4b;
-    --black: #2E2E2E;
+    --black: #1a1a1a;
     --yellow: #ffc600;
     --white: #fff;
     
@@ -27,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
 
   button {
     background: var(----gray);
-    color: white;
+    color: var(---black);
     border: 0;
     padding: 0.6rem 1rem;
     border-radius: 2px;

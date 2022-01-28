@@ -22,6 +22,7 @@ const NavStyles = styled.nav`
     }
   }
   a {
+    color: var(--black);
     font-size: 3rem;
     text-decoration: none;
     &:hover {
@@ -49,7 +50,7 @@ export default function Nav() {
           <Link to="/cakes">Cakes</Link>
         </li>
         <li>
-          <Link to="/coffe">Coffe</Link>
+          <Link to="/coffes">Coffe</Link>
         </li>
         <li>
           <Link to="/bakers">Bakers</Link>

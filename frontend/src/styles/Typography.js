@@ -1,14 +1,12 @@
 import { createGlobalStyle } from "styled-components";
-import font from "../assets/fonts/DongleRegular.ttf";
+// import lightFont from "../assets/fonts/DongleLight.ttf";
+// import regularFont from "../assets/fonts/DongleRegular.ttf";
 
 const Typography = createGlobalStyle`
-  @font-face {
-    font-family: DongleRegular;
-    src: url(${font});
-  }
   html {
-    font-family: DongleRegular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Dongle, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--black);
+    font-weight: 400;
   }
   p, li {
     letter-spacing: 0.5px;
@@ -18,15 +16,19 @@ const Typography = createGlobalStyle`
     margin: 0;
   }
   a {
-    color: var(--black);
-    text-decoration-color: var(--red);
+    font-family: Dongle, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    color: var(--white);
+    text-decoration-color: var(--deepPurple);
+
   }
   mark, .mark {
-    background: var(--yellow);
-    padding: 0 2px 2px 2px;
+    color: var(--white);
+    background: var(--black);
+    padding: 0px 10px 2px 10px;
     margin: 0;
     display: inline;
-    line-height: 1;
+    line-height: normal;
   }
 
   .center {
