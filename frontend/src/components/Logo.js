@@ -1,15 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import font from "../assets/fonts/PTSerifCaption.ttf";
 
 const LogoStyles = styled.nav`
-  @font-face {
-    font-family: PTSerifCaption;
-    src: url(${font});
-  }
-  font-family: PTSerifCaption;
+  font-family: "PT Serif Caption", serif;
   color: white;
-  background-color: black;
+  background-color: var(--black);
   margin: auto;
 `;
 

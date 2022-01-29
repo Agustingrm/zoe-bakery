@@ -9,12 +9,14 @@ const pageStyles = {
 };
 const headingStyles = {
   marginTop: 0,
-  marginBottom: 64,
+  marginBottom: 32,
   maxWidth: 320,
 };
 
 const linkStyles = {
   fontWeight: "bold",
+  color: "black",
+  fontSize: "4rem",
 };
 
 // markup
