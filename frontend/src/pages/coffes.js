@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
+import SEO from "../components/SEO";
 
 const CoffeGridStyles = styled.div`
   display: grid;
@@ -29,6 +30,7 @@ const SingleCoffeGrid = styled.div`
 export default function CoffesPage({ data }) {
   return (
     <>
+      <SEO title="Coffe" />
       <h2 className="center">
         While you wait for your order, you can take one of our {data.coffes.nodes.length} Coffes Available
       </h2>

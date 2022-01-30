@@ -11,7 +11,8 @@
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "netlify": "netlify dev"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.2",

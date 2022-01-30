@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Pagination from "../components/Pagination";
+import SEO from "../components/SEO";
 
 const BakerGrid = styled.div`
   display: grid;
@@ -43,6 +44,7 @@ export default function BakersPage({ data, pageContext }) {
   const baker = data.bakers.nodes;
   return (
     <>
+      <SEO title={`Bakers - Page ${pageContext.currentPage || 1}`} />
       <Pagination
         pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
         totalCount={data.bakers.totalCount}

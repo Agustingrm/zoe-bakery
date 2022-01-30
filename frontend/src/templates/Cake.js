@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
+import SEO from "../components/SEO";
 
 const CakeGrid = styled.div`
   display: grid;
@@ -24,18 +25,21 @@ const CakeGrid = styled.div`
 export default function SingleCakePage({ data: { cake } }) {
   const image = getImage(cake.image.asset);
   return (
-    <CakeGrid>
-      <GatsbyImage image={image} alt={cake.name} />
-      <div>
-        <h2 className="mark">{cake.name}</h2>
-        <h3>Ingredients:</h3>
-        <ul>
-          {cake.ingredients.map((ingredient) => (
-            <li key={ingredient.id}>{ingredient.name}</li>
-          ))}
-        </ul>
-      </div>
-    </CakeGrid>
+    <>
+      <SEO title={cake.name} image={cake.image?.asset?.gatsbyImageData.images?.fallback?.src} />
+      <CakeGrid>
+        <GatsbyImage image={image} alt={cake.name} />
+        <div>
+          <h2 className="mark">{cake.name}</h2>
+          <h3>Ingredients:</h3>
+          <ul>
+            {cake.ingredients.map((ingredient) => (
+              <li key={ingredient.id}>{ingredient.name}</li>
+            ))}
+          </ul>
+        </div>
+      </CakeGrid>
+    </>
   );
 }
 

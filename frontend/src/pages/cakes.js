@@ -2,11 +2,13 @@ import React from "react";
 import { graphql } from "gatsby";
 import CakeList from "../components/CakeList";
 import IngredientsFilter from "../components/IngredientsFilter";
+import SEO from "../components/SEO";
 
-export default function CakesPage({ data }) {
+export default function CakesPage({ data, pageContext }) {
   const cakes = data.cakes.nodes;
   return (
     <>
+      <SEO title={pageContext.ingredient ? `Cakes With ${pageContext.ingredient}` : `All Cakes`} />
       <IngredientsFilter />
       <CakeList cakes={cakes} />
     </>

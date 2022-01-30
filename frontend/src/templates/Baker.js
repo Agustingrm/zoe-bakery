@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
+import SEO from "../components/SEO";
 
 const BakerPageStyles = styled.div`
   max-width: 1000px;
@@ -22,13 +23,16 @@ const BakerPageStyles = styled.div`
 export default function BakerPage({ data: { person } }) {
   const image = getImage(person.image.asset);
   return (
-    <BakerPageStyles className="center">
-      <GatsbyImage image={image} alt={person.name} />
-      <h2>
-        <span className="mark">{person.name}</span>
-      </h2>
-      <p>{person.description}</p>
-    </BakerPageStyles>
+    <>
+      <SEO title={person.name} image={person.image?.asset?.gatsbyImageData.images?.fallback?.src} />
+      <BakerPageStyles className="center">
+        <GatsbyImage image={image} alt={person.name} />
+        <h2>
+          <span className="mark">{person.name}</span>
+        </h2>
+        <p>{person.description}</p>
+      </BakerPageStyles>
+    </>
   );
 }
 

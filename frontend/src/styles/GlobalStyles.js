@@ -27,8 +27,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    background: var(----gray);
-    color: var(---black);
+    background: var(--gray);
+    color: var(--black);
     border: 0;
     padding: 0.6rem 1rem;
     border-radius: 2px;
