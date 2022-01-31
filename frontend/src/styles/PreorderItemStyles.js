@@ -24,7 +24,7 @@ const PreorderItemStyles = styled.div`
   }
   .remove {
     background: none;
-    color: var(--deepPurple);
+    color: var(--tigerOrange);
     font-size: 3rem;
     position: absolute;
     top: 0;

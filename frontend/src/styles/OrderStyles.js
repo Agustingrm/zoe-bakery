@@ -18,7 +18,15 @@ const OrderStyles = styled.form`
   }
   button[type="submit"] {
     font-size: 2.5rem;
-    width: 100px;
+    width: 150px;
+  }
+  .error {
+    color: var(--red);
+    margin: 2px 0;
+    font-size: 2.5rem;
+  }
+  .marshmallow {
+    display: none;
   }
   @media (max-width: 900px) {
     fieldset.menu,

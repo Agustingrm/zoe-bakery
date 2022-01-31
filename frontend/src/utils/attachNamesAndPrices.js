@@ -8,7 +8,7 @@ export default function attachNamesAndPrices(order, cakes) {
     return {
       ...item,
       name: cake.name,
-      thumbnail: getImage(cake.image.asset),
+      thumbnail: cake.image?.asset?.gatsbyImageData.images?.fallback?.src,
       price: formatMoney(calculateCakePrice(cake.price, item.size)),
     };
   });

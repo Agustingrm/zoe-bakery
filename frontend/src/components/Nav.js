@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Logo from "./Logo";
 
 const NavStyles = styled.nav`
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   ul {
     margin: 0;
     padding: 0;
@@ -22,15 +22,16 @@ const NavStyles = styled.nav`
     }
   }
   a {
+    font-weight: 400;
     color: var(--black);
     font-size: 3rem;
     text-decoration: none;
     &:hover {
-      color: var(--deepPurple);
+      color: var(--tigerOrange);
     }
   }
-  &[aria-current="page"] {
-    color: green;
+  [aria-current="page"] {
+    color: var(--tigerOrange);
   }
 `;
 

@@ -10,6 +10,13 @@ import PreorderItemStyles from "../styles/PreorderItemStyles";
 import useCake from "../utils/useCake";
 import CakeOrder from "../components/CakeOrder";
 import calculateOrderTotal from "../utils/calculateOrderTotal";
+import styled from "styled-components";
+
+const MessageStyles = styled.p`
+  font-size: 3rem;
+  margin: 3rem;
+  color: var(--black);
+`;
 
 export default function OrderPage({ data }) {
   const { values, updateValue } = useForm({
@@ -19,21 +26,31 @@ export default function OrderPage({ data }) {
   const cakes = data.cakes.nodes;
   const { order, addToOrder, removeFromOrder, error, loading, message, submitOrder } = useCake({
     cakes,
-    inputs: values,
+    values,
   });
-
+  if (message) {
+    return <MessageStyles>{message}</MessageStyles>;
+  }
   return (
     <>
       <SEO title="Preorder a Cake" />
-      <OrderStyles>
-        <fieldset>
+      <OrderStyles onSubmit={submitOrder}>
+        <fieldset disabled={loading}>
           <legend>Your Info</legend>
           <label htmlFor="name">Name</label>
           <input type="text" name="name" id="name" value={values.name} onChange={updateValue} />
           <label htmlFor="email">Email</label>
           <input type="email" name="email" id="email" value={values.email} onChange={updateValue} />
+          <input
+            type="marshmallow"
+            name="marshmallow"
+            id="marshmallow"
+            value={values.marshmallow}
+            onChange={updateValue}
+            className="marshmallow"
+          />
         </fieldset>
-        <fieldset className="menu">
+        <fieldset className="menu" disabled={loading}>
           <legend>Menu</legend>
           {cakes.map((cake) => (
             <PreorderItemStyles key={cake.id}>
@@ -59,13 +76,13 @@ export default function OrderPage({ data }) {
             </PreorderItemStyles>
           ))}
         </fieldset>
-        <fieldset className="order">
+        <fieldset className="order" disabled={loading}>
           <legend>Order</legend>
           <CakeOrder order={order} removeFromOrder={removeFromOrder} cakes={cakes} />
         </fieldset>
-        <fieldset>
+        <fieldset disabled={loading}>
           <h3>Your Total is {formatMoney(calculateOrderTotal(order, cakes))}</h3>
-          <div>{error ? <p>Error: {error}</p> : ""}</div>
+          <div>{error ? <p className="error">Error: {error}</p> : ""}</div>
           <button type="submit">{loading ? "Placing Order..." : "Order"}</button>
         </fieldset>
       </OrderStyles>

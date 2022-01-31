@@ -19,6 +19,9 @@ const CakeStyles = styled.div`
   p {
     margin: 0;
   }
+  a {
+    text-decoration-thickness: 2px;
+  }
 `;
 
 function SingleCake({ cake }) {
@@ -37,9 +40,18 @@ function SingleCake({ cake }) {
 }
 
 export default function CakeList({ cakes }) {
+  let orderedCake = cakes.sort(function (a, b) {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  });
   return (
     <CakeGridStyles>
-      {cakes.map((cake) => (
+      {orderedCake.map((cake) => (
         <SingleCake key={cake.id} cake={cake} />
       ))}
     </CakeGridStyles>

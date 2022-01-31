@@ -32,6 +32,7 @@ export default function useCake({ cakes, values }) {
       total: formatMoney(calculateOrderTotal(order, cakes)),
       name: values.name,
       email: values.email,
+      marshmallow: values.marshmallow,
     };
     // Send this to a serverless function when they check out
     const res = await fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {
@@ -51,6 +52,7 @@ export default function useCake({ cakes, values }) {
       // It worked!
       setLoading(false);
       setMessage("You can come to pick up your order in 24h! Enjoy");
+      setOrder([]);
     }
   }
   return {

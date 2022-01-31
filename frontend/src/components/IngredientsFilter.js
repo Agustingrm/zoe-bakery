@@ -30,7 +30,7 @@ const IngredientsStyles = styled.div`
       height: 80%;
     }
     &[aria-current="page"] {
-      background: var(--softPurple);
+      background: var(--tigerOrange);
     }
   }
 `;

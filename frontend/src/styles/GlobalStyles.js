@@ -3,8 +3,8 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
   :root {
     --red: #FF4949;
-    --softPurple: #D209e0;
-    --deepPurple: #840888;
+    --tigerOrange: #FC6A03;
+    --darkOrange: #d15700;
     --gray: #aaaaaa;
     --softBlack: #4b4b4b;
     --black: #1a1a1a;
@@ -27,14 +27,14 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    background: var(--gray);
+    background: var(--tigerOrange);
     color: var(--black);
     border: 0;
     padding: 0.6rem 1rem;
     border-radius: 2px;
     cursor: pointer;
     --cast: 2px;
-    box-shadow: var(--cast) var(--cast) 0 var(--softBlack);
+    box-shadow: var(--cast) var(--cast) 0 var(--darkOrange);
     text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.2);
     transition: all 0.2s;
     &:hover {

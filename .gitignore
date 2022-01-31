@@ -1,3 +1,5 @@
 Logos
+frontend/.env
+backend/.env
 .env
 .gitignore

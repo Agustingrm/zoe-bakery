@@ -8,7 +8,7 @@ import SEO from "../components/SEO";
 const BakerGrid = styled.div`
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 `;
 
 const BakerStyles = styled.div`

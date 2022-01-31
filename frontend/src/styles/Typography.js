@@ -19,13 +19,13 @@ const Typography = createGlobalStyle`
     font-family: Dongle, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
     color: var(--white);
-    text-decoration-color: var(--deepPurple);
+    text-decoration-color: var(--tigerOrange);
 
   }
   mark, .mark {
     color: var(--white);
     background: var(--black);
-    padding: 0px 10px 2px 10px;
+    padding: 2px 10px 0 10px;
     margin: 0;
     display: inline;
     line-height: normal;
