@@ -3,6 +3,7 @@ import ItemGrid from "../components/ItemGrid";
 import LoadingGrid from "../components/LoadingGrid";
 import { HomePageGrid } from "../styles/Grids";
 import useLatestData from "../utils/useLatestData";
+import SEO from "../components/SEO";
 
 function CurrentlyWorking({ bakers }) {
   return (
@@ -33,15 +34,17 @@ function Slices({ slice }) {
 
 export default function HomePage() {
   const { bakers, slice } = useLatestData();
-
   return (
-    <div className="center">
-      <h1>The Classic French Bakery</h1>
-      <p>Open 8h to 20h Every Single Day</p>
-      <HomePageGrid>
-        <CurrentlyWorking bakers={bakers} />
-        <Slices slice={slice} />
-      </HomePageGrid>
-    </div>
+    <>
+      <SEO title="Home" />
+      <div className="center">
+        <h1>The Classic French Bakery</h1>
+        <p>Open 8h to 20h Every Single Day</p>
+        <HomePageGrid>
+          <CurrentlyWorking bakers={bakers} />
+          <Slices slice={slice} />
+        </HomePageGrid>
+      </div>
+    </>
   );
 }
