@@ -3,9 +3,13 @@ import styled from "styled-components";
 export const HomePageGrid = styled.div`
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  --columns: 2;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
   p {
     font-size: 2.5rem;
+  }
+  @media (max-width: 800px) {
+    --columns: 1;
   }
 `;
 
@@ -26,10 +30,11 @@ export const ItemStyles = styled.div`
   }
   p {
     font-size: 3rem;
-    transform: translateY(-80%);
+    transform: translateY(-10px);
     position: absolute;
     width: 100%;
     left: 0;
+    margin: 0;
   }
   .mark {
     display: inline;
@@ -53,5 +58,10 @@ export const ItemStyles = styled.div`
     );
     background-size: 500px;
     animation: shine 1s infinite linear;
+  }
+  @media (max-width: 475px) {
+    p {
+      font-size: 2rem;
+    }
   }
 `;

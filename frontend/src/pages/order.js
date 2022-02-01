@@ -58,10 +58,11 @@ export default function OrderPage({ data }) {
               <div>
                 <h2>{cake.name}</h2>
               </div>
-              <div>
+              <div className="sizeButton">
                 {["Slice", "Cake"].map((size) => (
                   <button
                     type="button"
+                    key={cake.id + size}
                     onClick={() =>
                       addToOrder({
                         id: cake.id,
@@ -80,8 +81,9 @@ export default function OrderPage({ data }) {
           <legend>Order</legend>
           <CakeOrder order={order} removeFromOrder={removeFromOrder} cakes={cakes} />
         </fieldset>
-        <fieldset disabled={loading}>
+        <fieldset disabled={loading} className="total">
           <h3>Your Total is {formatMoney(calculateOrderTotal(order, cakes))}</h3>
+          <p>It can be picked up the following day from 6:00 pm.</p>
           <div>{error ? <p className="error">Error: {error}</p> : ""}</div>
           <button type="submit">{loading ? "Placing Order..." : "Order"}</button>
         </fieldset>

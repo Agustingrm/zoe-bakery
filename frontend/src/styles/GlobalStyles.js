@@ -18,7 +18,6 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 2rem;
-    max-width: calc(100vw - 6px);
   }
 
   fieldset {

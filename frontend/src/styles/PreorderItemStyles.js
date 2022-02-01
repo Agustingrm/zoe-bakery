@@ -32,6 +32,20 @@ const PreorderItemStyles = styled.div`
     box-shadow: none;
     line-height: 1rem;
   }
+  @media (max-width: 400px) {
+    grid-template-rows: auto;
+    button + button {
+      margin-left: 0;
+    }
+    .sizeButton {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 5px;
+      button {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export default PreorderItemStyles;

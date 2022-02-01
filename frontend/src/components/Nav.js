@@ -33,6 +33,11 @@ const NavStyles = styled.nav`
   [aria-current="page"] {
     color: var(--tigerOrange);
   }
+  @media (max-width: 450px) {
+    a {
+      font-size: 2.5rem;
+    }
+  }
 `;
 
 export default function Nav() {

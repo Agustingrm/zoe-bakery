@@ -33,6 +33,12 @@ const IngredientsStyles = styled.div`
       background: var(--tigerOrange);
     }
   }
+  @media (max-width: 500px) {
+    gap: 0.5rem;
+    a {
+      font-size: 2rem;
+    }
+  }
 `;
 
 function amountOfCakesInIngredients(cakes) {

@@ -20,6 +20,9 @@ const CoffeGridStyles = styled.div`
     text-decoration: underline;
     text-decoration-thickness: 0.1rem;
   }
+  @media (max-width: 460px) {
+    grid-template-rows: none;
+  }
 `;
 
 const SingleCoffeGrid = styled.div`

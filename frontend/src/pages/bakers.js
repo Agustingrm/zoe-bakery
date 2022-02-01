@@ -7,16 +7,18 @@ import SEO from "../components/SEO";
 
 const BakerGrid = styled.div`
   display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  box-sizing: content-box;
+  padding: 0 4rem;
+  @media (max-width: 1000px) {
+    padding: 0;
+  }
 `;
 
 const BakerStyles = styled.div`
   a {
     text-decoration: none;
-  }
-  .gatsby-image-wrapper {
-    height: 300px;
   }
   h2 {
     text-align: center;
@@ -37,6 +39,11 @@ const BakerStyles = styled.div`
   }
   .mark {
     padding: 6px 10px 0px;
+  }
+  @media (max-width: 500px) {
+    .gatsby-image-wrapper {
+      width: 100%;
+    }
   }
 `;
 
@@ -60,7 +67,7 @@ export default function BakersPage({ data, pageContext }) {
                 <span className="mark">{person.name}</span>
               </h2>
             </Link>
-            <GatsbyImage image={getImage(person.image.asset)} alt={baker.name} />
+            <GatsbyImage image={getImage(person.image.asset)} alt={person.name} />
             <p className="description">{person.description}</p>
           </BakerStyles>
         ))}
