@@ -44,7 +44,6 @@ export default function useLatestData() {
       .then((res) => res.json())
       .then((res) => {
         // set the data to state
-        console.log(res);
         setSlice(res.data.StoreSettings.slice);
         setBakers(res.data.StoreSettings.bakers);
       });
